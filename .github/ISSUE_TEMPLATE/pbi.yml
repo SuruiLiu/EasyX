@@ -1,0 +1,51 @@
+name: "PBI - Product Backlog Item"
+description: "Used to create standardized PBI (including acceptance criteria, story points, priority, etc.)"
+title: "[PBI]"
+labels:
+  - "PBI"
+  - "status:backlog"
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Brief Description
+      description: Describe the goal/background (why do this)
+      placeholder: "User story / Goal / Background"
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: List clear acceptance conditions (verifiable)
+      placeholder: "- Given ...\n- When ...\n- Then ..."
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+  - type: dropdown
+    id: estimate
+    attributes:
+      label: Estimation (Story Points or T-shirt)
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
+  - type: input
+    id: epic
+    attributes:
+      label: Epic (Optional)
+      description: Related Epic or higher-level requirement
+  - type: input
+    id: due
+    attributes:
+      label: Target Completion Date (Optional)
+      description: YYYY-MM-DD
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes/Implementation Details (Optional)

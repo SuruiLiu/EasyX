@@ -1,0 +1,34 @@
+name: PR -> Issue labels automation
+on:
+  pull_request:
+    types: [opened, reopened, edited, closed]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  label-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Act on referenced issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr) return;
+            const body = pr.body || '';
+            const issueNums = [...body.matchAll(/#(\d+)/g)].map(m => parseInt(m[1]));
+            if (issueNums.length === 0) return;
+            for (const num of issueNums) {
+              try {
+                if (context.payload.action === 'closed' && pr.merged) {
+                  await github.rest.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: num, labels: ['status:done']});
+                  await github.rest.issues.removeLabel({owner: context.repo.owner, repo: context.repo.repo, issue_number: num, name: 'status:in-progress'}).catch(()=>{});
+                } else if (['opened','reopened','edited'].includes(context.payload.action)) {
+                  await github.rest.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: num, labels: ['status:in-progress']});
+                }
+              } catch (err) {
+                core.info(`Issue ${num}: ${err}`);
+              }
+            }
