@@ -1,0 +1,117 @@
+{
+    "base": {
+    "po_number": "123456",
+    "client": "Goverment",
+    "supervisor": "James"
+    },
+    "employee": {
+    "name": "Surui Liu",
+    "company": "Employer Pty Ltd"
+    },
+    "work_entries": [
+    {
+    "weekday": "Monday",
+    "date_original": "11-Aug-25",
+    "date_iso": "2025-08-11",
+    "morning": { "start": "9:30", "finish": "12:30", "time": "3:00" },
+    "afternoon": { "start": "13:30", "finish": "18:00", "time": "4:30" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "7:30",
+    "total_daily_decimal": 7.5
+    },
+    {
+    "weekday": "Tuesday",
+    "date_original": "12-Aug-25",
+    "date_iso": "2025-08-12",
+    "morning": { "start": "9:30", "finish": "12:30", "time": "3:00" },
+    "afternoon": { "start": "13:30", "finish": "19:00", "time": "5:30" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "8:30",
+    "total_daily_decimal": 8.5
+    },
+    {
+    "weekday": "Wednesday",
+    "date_original": "13-Aug-25",
+    "date_iso": "2025-08-13",
+    "morning": { "start": "9:30", "finish": "12:30", "time": "3:00" },
+    "afternoon": { "start": "13:30", "finish": "18:00", "time": "4:30" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "7:30",
+    "total_daily_decimal": 7.5
+    },
+    {
+    "weekday": "Thursday",
+    "date_original": "14-Aug-25",
+    "date_iso": "2025-08-14",
+    "morning": { "start": "9:30", "finish": "12:30", "time": "3:00" },
+    "afternoon": { "start": "13:30", "finish": "20:00", "time": "6:30" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "9:30",
+    "total_daily_decimal": 9.5
+    },
+    {
+    "weekday": "Friday",
+    "date_original": "15-Aug-25",
+    "date_iso": "2025-08-15",
+    "morning": { "start": "9:30", "finish": "12:30", "time": "3:00" },
+    "afternoon": { "start": "13:30", "finish": "18:00", "time": "4:30" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "7:30",
+    "total_daily_decimal": 7.5
+    },
+    {
+    "weekday": "Saturday",
+    "date_original": "16-Aug-25",
+    "date_iso": "2025-08-16",
+    "morning": { "start": "", "finish": "", "time": "0:00" },
+    "afternoon": { "start": "", "finish": "", "time": "0:00" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "0:00",
+    "total_daily_decimal": 0.0
+    },
+    {
+    "weekday": "Sunday",
+    "date_original": "17-Aug-25",
+    "date_iso": "2025-08-17",
+    "morning": { "start": "", "finish": "", "time": "0:00" },
+    "afternoon": { "start": "", "finish": "", "time": "0:00" },
+    "extra_in_out": { "morning": "0:00", "afternoon": "0:00" },
+    "total_daily_hours": "0:00",
+    "total_daily_decimal": 0.0
+    }
+    ],
+    "weekly_total": {
+    "total_hours": "40:30",
+    "total_decimal_hours": 40.5
+    },
+    "tasks": [
+    {
+    "task_name": "Task1",
+    "per_day": {
+    "Mon": "7:30",
+    "Tues": "8:30",
+    "Wed": "7:30",
+    "Thur": "9:30",
+    "Fri": "7:30",
+    "Sat/Sun": ""
+    },
+    "total_hours": "40:30",
+    "decimal_hours": 40.5
+    }
+    ],
+    "totals_row": {
+    "label": "Total Hours",
+    "by_day": {
+    "Mon": "7:30",
+    "Tues": "8:30",
+    "Wed": "7:30",
+    "Thur": "9:30",
+    "Fri": "7:30",
+    "Sat": "0:00",
+    "Sun": "0:00"
+    },
+    "total_hours": "40:30",
+    "total_decimal_hours": 40.5
+    },
+    "date": "8/15/2025"
+}
