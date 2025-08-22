@@ -15,13 +15,15 @@ RUN npm run build
 # Stage 2: Python backend with Debian slim
 FROM python:3.11-slim AS backend
 
-# Install system dependencies
+# Install system dependencies for pdfplumber and potential PDF processing
+# poppler-utils provides pdftotext, which pdfplumber uses for text extraction
 RUN apt-get update && apt-get install -y \
     gcc \
     libc6-dev \
     libffi-dev \
     libssl-dev \
     wget \
+    poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
