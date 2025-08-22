@@ -64,8 +64,11 @@ EasyX/
 - Python 3.x installed
 - Node.js and npm installed
 - Git for version control
+- Docker (for containerized deployment)
 
 ### Installation & Running
+
+#### Option 1: Local Development
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/SuruiLiu/EasyX.git
@@ -79,8 +82,38 @@ EasyX/
 
 3. **Access the application**:
    - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - Health Check: http://localhost:5000/health
+   - Backend API: http://localhost:5001
+   - Health Check: http://localhost:5001/health
+
+#### Option 2: Docker Deployment
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/SuruiLiu/EasyX.git
+   cd EasyX
+   ```
+
+2. **Build Docker image**:
+   ```bash
+   ./build.sh
+   ```
+
+3. **Run with Docker Compose**:
+   ```bash
+   docker-compose up
+   ```
+
+4. **Access the application**:
+   - Application: http://localhost:5001
+   - Health Check: http://localhost:5001/health
+
+#### Option 3: Direct Docker Run
+```bash
+# Build the image
+docker build -t easyx:latest .
+
+# Run the container
+docker run -p 5001:5001 easyx:latest
+```
 
 ## 📋 User Scenarios
 Refer to the detailed user scenarios in [Issue #34](https://github.com/SuruiLiu/EasyX/issues/34) for insights into how the system is used in real-world payroll processing situations.
