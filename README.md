@@ -121,6 +121,9 @@ Refer to the detailed user scenarios in [Issue #34](https://github.com/SuruiLiu/
 ## 📊 PBI Progress
 Track the progress of Product Backlog Items (PBIs) in the [project board](https://github.com/users/SuruiLiu/projects/2).
 
+## Decision Backlogs
+Track the decisions we made during the development, updated information in the issue comments. https://github.com/SuruiLiu/EasyX/issues/33
+
 ## 🤝 Contributing
 To contribute to this project, please follow these steps:
 
