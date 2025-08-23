@@ -27,6 +27,10 @@ env/
 ENV/
 env.bak/
 venv.bak/
+# Python virtual env (hidden)
+.venv/
+**/.venv/
+**/venv/
 
 # Flask
 instance/
