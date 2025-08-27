@@ -1,0 +1,80 @@
+:root{
+  --border:#e5e7eb; 
+  --muted:#64748b;
+}
+
+.rt-card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.rt-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.rt-table thead{
+  background:#f8fafc;
+  color:var(--muted);
+}
+
+.rt-table th, .rt-table td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  vertical-align:middle;   /* 让勾/叉与文字居中对齐 */
+}
+
+/* —— 勾/叉样式（替代原来的 .dot） —— */
+.check{
+  display:inline-block;
+  width:1.1em;             /* 固定宽度，避免抖动 */
+  text-align:center;
+  margin-right:6px;
+  font-weight:700;
+  font-size:15px;
+  line-height:1;
+}
+.check { display:inline-block; width:1.1em; text-align:center; margin-right:6px; font-weight:700; font-size:15px; line-height:1; }
+.check-true  { color:#10b981; }   /* ✔ 绿色 */
+.check-false { color:#ef4444; }   /* ✘ 红色 */
+.check-none  { color:#cbd5e1; }   /* 灰色占位 */
+
+/* 可选：控制第一列宽度更稳定些 */
+ .rt-table th:first-child, .rt-table td:first-child { width: 40%; }
+
+.rt-label{ /* 仅做一点点间距微调 */
+  display:inline-block;
+}
+
+/*增加的部分：点击更改 */
+.check-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.check-overridden {
+  outline: 2px dashed #f59e0b; /* 橙色虚线框做强调 */
+  outline-offset: 2px;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+.rt-badge {
+  margin-left: 6px;
+  font-size: 12px;
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  padding: 1px 6px;
+  border-radius: 9999px;
+}
+
+.rt-signature {
+  text-align: right;
+  font-style: italic;
+  color: #3b82f6;
+}

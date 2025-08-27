@@ -1,0 +1,49 @@
+:root{
+  --border:#e5e7eb; 
+  --muted:#64748b; 
+  --bg-soft:#f3f4f6;
+}
+
+.pdf-card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  background:#fff;
+  width:100%;           
+  margin:16px auto;
+  overflow:hidden;
+}
+
+.pdf-header{
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.pdf-frame{
+  width:100%;
+  height:92vh;          
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.pdf-embed{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+}
+
+.pdf-placeholder{
+  width:100%;
+  min-height:60vh;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#ddd;
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  color:#111; 
+  font-size:14px;
+}
