@@ -120,4 +120,55 @@
  - Need to explore strategies for balancing performance and functionality in complex database design.
  - Further learning is required to improve database deployment scripts and SQL statements.
  - Clarifying and implementing the database optimization direction remains a key task.
+ - 
+
+
+ ## @Yudong Qiu  
+### 29 August 2025
+
+---
+
+### 1. Work Completed This Week
+
+- **Implemented PostgreSQL Query Functionality:**  
+  Developed the core database query module in the software based on the project’s data access requirements.  
+  Using Python (`psycopg2`), successfully established connections to the PostgreSQL database and implemented basic `SELECT` queries.
+
+- **Initial Testing and Validation Completed:**  
+  Integrated the module into the local development environment and tested it to ensure connection stability, correctness of query results, and proper parameter passing and data type conversion.
+
+- **Prepared for Future Feature Expansion:**  
+  The current implementation was designed with extensibility in mind, allowing dynamic SQL construction and parameter binding to support future expansion of query conditions and functionality.
+
+---
+
+### 2. Work Plan for Next Week
+
+- **Refine the Existing Query Module:**  
+  Enhance error handling and edge case processing (e.g., empty fields, connection failures, empty query results) to improve robustness and user experience.
+
+- **Expand Coverage to Additional Tables:**  
+  Based on evolving business requirements and frontend demands, add new database tables and implement corresponding SQL queries to support more complex data access and visualization needs.
+
+- **Improve Maintainability and Configuration:**  
+  Externalize database connection parameters and query fields into `.env` files or YAML/JSON configuration files to simplify environment management and improve maintainability.
+
+---
+
+### 3. Current Challenges and Difficulties
+
+- **Tight Coupling Between SQL and Application Logic:**  
+  SQL statements are currently hardcoded in the application. Schema changes may cause maintenance difficulties.  
+  Considering abstraction layers or ORM adoption for better modularity.
+
+- **Query Performance Optimization Needs Improvement:**  
+  Complex queries with multiple joins and filters are not yet optimized.  
+  Plan to use `EXPLAIN` and indexing strategies to improve performance.
+
+- **Transaction Control and Exception Handling Require Enhancement:**  
+  Current database interactions lack complete transaction handling.  
+  Need to explore `psycopg2` transaction practices to ensure proper rollback and error recovery.
+
+---
+
 
