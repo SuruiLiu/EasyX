@@ -22,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/extract" element={<Extract />} />
+            <Route path="/review" element={<TimesheetReview />}/>
           </Routes>
         </main>
         <Footer />
