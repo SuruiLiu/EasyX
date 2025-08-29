@@ -65,4 +65,29 @@
  - The current review table is still a static sample, so it cannot yet fetch real data.
 
 
-## @XXX
+## @EdenTian
+### 22.08.2025:
+ 1. What I did this week
+ - Finished this week’s Internal Meeting Minutes and Client Meeting Minutes  
+ - Finished the backend logic of timesheet validation with test cases  
+ - Revised the issues’ description and organising  
+ 2. Plan for next week
+ - Plan to integrate the logic with the frontend  
+ - Discuss with teammates about the timesheet processing from the extracted raw data to Xero-compatible format  
+ 3. Hurdles
+ - I assumed the data my logic is using is the processed data, but it might actually be raw data.  
+ - Need more discussion with teammates on handling the gap between raw extracted data and Xero-compatible data in advance.  
+ - Did not realise this issue until I was working on it.  
+
+### 29.08.2025:
+ 1. What I did this week
+ - Finished this week’s Internal Meeting Minutes and Client Meeting Minutes  
+ - Updated the backend logic based on client feedback and test cases
+  
+ 2. Plan for next week
+ - Integrate the validation logic with the frontend  
+ - Develop a new frontend page: **Company Details Page**   
+
+ 3. Hurdles
+ - Waiting for database teammates to provide data for integration  
+
