@@ -1,3 +1,132 @@
+# Aug 29 Meeting Minutes - Internal Agenda
+## Agenda
+
+- Project Progress Review  
+- Technical Challenges Discussion  
+- Database Design and Implementation  
+- Task Distribution and Clarification  
+- Decision Documentation  
+- Code Integration and Testing  
+- Frontend Development Status  
+- Next Week's Plan  
+
+## Project Progress Review
+
+- The team is working on completing Sprint 1 tasks and beginning to plan for Sprint 2.  
+- Database implementation is still in progress and needs to be completed.  
+- Frontend has a page with hardcoded data that needs to be integrated with the backend.  
+- Code comments need to be added to methods.  
+
+## Next Week's Plan
+
+- Complete the database implementation and integration.  
+- Connect frontend with backend components.  
+- Implement data processing and validation logic.  
+- Handle conflict resolution in code merges.  
+
+## Technical Challenges Discussion
+
+- Database design needs to be simplified for local implementation.  
+- PostgreSQL setup and configuration for local development.  
+- Table structure design with four fields: **ID, metadata, state, and expected data**.  
+- Data extraction and processing from PDF files.  
+- Integration between components using method calls rather than direct database access.  
+
+## Product Requirements Update
+
+- Focus on completing Sprint 1 requirements before moving to Sprint 2.  
+- Current implementation only needs the **timesheet table**.  
+- Future implementation will include **employee** and **company** tables.  
+- Data format for extracted information has been defined.  
+- JSON structure for data exchange between components has been established.  
+
+## Team Collaboration and Communication
+
+- Team members need to complete their assigned tasks before integration.  
+- Code should be decoupled to ensure components can function independently.  
+- Pull requests should be submitted after individual components are tested.  
+- Decision documentation needs to be updated with proper format.  
+- Communication about data formats needed between team members.  
+
+## Risk Management
+
+- Local database implementation has reliability concerns.  
+- Changes to table structure might be needed in future sprints.  
+- Integration issues might arise when connecting components.  
+- Task dependencies need to be managed to avoid blocking progress.  
+- Code conflicts need to be resolved before final integration.  
+
+## Continuous Improvement
+
+- Code comments need to be added to improve readability.  
+- Decision documentation process needs to be formalized.  
+- Documentation should be maintained in a central location.  
+
+## Todo for Everyone
+
+- Complete database table creation and testing - Weimiao Sun 
+- Implement data insertion functionality - Yudong Qiu
+- Develop data retrieval methods - Larry Wang
+- Update validation service logic - Eden Tian
+- Debug frontend and merging - Cherl 
+- Run the extraction function locally and revise decision backlogs - Suu
+- Research Xero API and run some tests - Farris
+- Add proper code comments to all methods - Everyone 
+
+
+# Aug 29 Meeting Minutes - With Clients
+## Topics
+
+- Sprint 1 project integration  
+- PDF data extraction functionality  
+- Database design and implementation  
+- Frontend development for timesheet review  
+- Docker environment setup  
+- Sprint 2 planning and goals  
+- Xero API integration  
+
+## Review
+
+The team reviewed their progress on the Sprint 1 project, focusing on the timesheet data extraction and validation process.  
+Team members have completed most of their individual goals for Sprint 1, including extracting data from PDF files, creating a Docker environment, implementing validation logic, and designing a basic database structure.  
+
+The team demonstrated their current functionality, showing how the system can extract data from PDF timesheets and compare it with expected values. They discussed their approach of building a simple but extendable database to focus on completing the core timesheet extraction and validation process first.  
+
+## Progress
+
+- Team members reported that they have finished most of their goals for Sprint 1 and are ready to integrate all features together.  
+- A team member completed the PDF data extraction function and created the Docker file.  
+- Another team member worked on validating the extracted data.  
+- A team member designed the database structure but mentioned it was currently basic to ensure functionality with the Python project.  
+- The team demonstrated the Docker environment setup with two containers – one for the project and one for the PostgreSQL database.  
+- The frontend interface was shown, displaying the checking result page that compares extracted data with expected data.  
+- The team successfully demonstrated the PDF extraction functionality, showing how quickly it could extract data from a timesheet.  
+- The team confirmed that the extraction is working correctly, though it currently doesn't validate signatures beyond checking if they exist.  
+
+## Issues
+
+- **Issue:** The database design might be too complicated and could affect efficiency.  
+  **Solution:** The team decided to build a simple but extendable database first to focus on completing the timesheet extraction and validation process.  
+
+- **Issue:** Some configuration issues were encountered when setting up the environment.  
+  **Solution:** Docker was used as an alternative environment to run the program when local environment had problems.  
+
+- **Issue:** There are conflicts in the codebase after merging the database code.  
+  **Solution:** The team is working with the last version before the database code was merged until the conflicts are resolved.  
+
+- **Issue:** The PDF extraction doesn't identify which part of the document contains specific information.  
+  **Solution:** The system reads all text from the PDF and then analyzes the content to match information patterns rather than using OCR or position-based extraction.  
+
+## Decisions
+
+- The team will integrate all components together today to complete Sprint 1.  
+- For Sprint 2, the team will expand the database as many features rely on its completion.  
+- The team will integrate the front and back end in Sprint 2.  
+- The team will connect and upload to Xero API by the end of Sprint 2.  
+- The team will read through all Xero API documentation in the first week of Sprint 2 and join the developer drop-in session in the second week if they have questions.  
+- For Sprint 2, the team will implement the timesheet review page, company detail page, employee list page, employee detail page, and contact details page.  
+- The listing pages will be implemented in Sprint 3 or as a stretch goal if Sprint 2 is completed early.  
+
 # Aug 22 Meeting Minutes - Internal Agenda
 ## Agenda
 - Project structure and framework discussion  
