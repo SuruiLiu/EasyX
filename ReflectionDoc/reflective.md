@@ -92,6 +92,33 @@
  - Waiting for database teammates to provide data for integration
 
 
+ ## @Larry Wang
+### 22.08.2025:
+ 1. What I did this week
+ - Consolidated and standardised previous issues on GitHub.
+ - Participated in database design discussions.
+ - Implemented and submitted a PR for the database data getter.
+ - Set up project prerequisites on my laptop and studied Flask and Docker basics.
+ 2. Plan for next week
+ - Research the Xero API.
+ - Identify and implement methods for data mapping.
+ 3. Hurdles
+ - This is my first time working on a Python project, so I need to continue learning Python and Flask in depth.  
+
+### 29.08.2025:
+ 1. What I did this week
+ - Researched SQLAlchemy and refactored the data extraction functionality to align with recent database changes, including adding necessary code for database connections.
+ - Explained and assisted the client in setting up the development environment on his laptop.
+ - Added standardised docstring-style comments to my code following project conventions.
+
+ 2. Plan for next week
+ - Discuss subtasks for Sprint 2 with the client and task allocation with team.
+ - Research Xero API integration to prepare for upcoming development work.
+
+ 3. Hurdles
+ - Spent a significant amount of time and effort figuring out how to refactor the code effectively.
+
+
 ## @Weimiao Sun
 ### 22.08.2025:
  1. What I did this week
