@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../style/status-block.css";
 
-/** 小徽章：右上角的 Status */
+/** Status at top right */
 function Pill({ text = "match" }) {
   return <span className="pill">{text}</span>;
 }
 
-/** 勾/叉小圆点 */
+/** right/wrong/dot */
 function Bullet({ ok }) {
   return (
     <span className={`bullet ${ok ? "bullet-green" : "bullet-red"}`}>
@@ -15,7 +15,7 @@ function Bullet({ ok }) {
   );
 }
 
-/** 可折叠区块（Email / Contract） */
+/** Folded area（Email / Contract） */
 function Collapse({ title, children, defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
@@ -29,7 +29,6 @@ function Collapse({ title, children, defaultOpen = true }) {
   );
 }
 
-/** 你要的整个模块 */
 export default function StatusBlock({
   statusText = "Status",
   emailItems = [],
@@ -37,7 +36,6 @@ export default function StatusBlock({
 }) {
   return (
     <section className="status-card">
-      {/* 顶部标题行 */}
       <div className="card-head">
         <div className="card-title">
           Timesheet <span className="muted">Employee Name, Week Worked</span>
@@ -47,7 +45,6 @@ export default function StatusBlock({
         </div>
       </div>
 
-      {/* Email 折叠 */}
       <Collapse title="Email" defaultOpen={true}>
         <ul className="checklist">
           {emailItems.map((it, i) => (
@@ -59,7 +56,6 @@ export default function StatusBlock({
         </ul>
       </Collapse>
 
-      {/* Contract Particulars 折叠 */}
       <Collapse title="Contract Particulars" defaultOpen={false}>
         <ul className="checklist">
           {contractItems.map((it, i) => (

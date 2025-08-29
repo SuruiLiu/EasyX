@@ -79,13 +79,12 @@ export default function TimesheetReview() {
         });
 
         console.log("CHECK status:", res.status);
-        const text = await res.text();          // 先拿原文，便于看到报错页
+        const text = await res.text(); 
         let result = {};
-        try { result = JSON.parse(text); } catch { /* 不是 JSON，说明后端报错页面 */ }
+        try { result = JSON.parse(text); } catch {}
 
         console.log("CHECK result:", result || text);
 
-        // 如果不是 JSON（后端异常），直接终止
         if (!result || typeof result !== "object") {
           setRows(rowsTemplate);
           return;

@@ -7,11 +7,10 @@
   border-radius:12px;
   background:var(--bg);
   overflow:hidden;
-  max-width: 1040px; /* 可按需调整 */
+  max-width: 1040px;
   margin:16px auto;
 }
 
-/* 顶部标题行 */
 .card-head{
   display:flex; justify-content:space-between; align-items:center;
   padding:14px 16px;
@@ -30,7 +29,6 @@
   color:#334155;
 }
 
-/* 折叠 */
 .collapse{ border-top:1px solid var(--border); }
 .collapse-head{
   width:100%; border:0; background:#fff; cursor:pointer;
@@ -41,7 +39,6 @@
 .chev{ color:#424242; transition:transform .2s ease; }
 .chev-open{ transform: rotate(180deg); }
 
-/* 清单 */
 .checklist{
   list-style:none; padding:0; margin:8px 0 0 0;
   display:flex; flex-wrap:wrap; gap:10px 16px; font-size:14px;

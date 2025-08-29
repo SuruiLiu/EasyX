@@ -25,13 +25,12 @@
   padding:10px 12px;
   border-bottom:1px solid var(--border);
   text-align:left;
-  vertical-align:middle;   /* 让勾/叉与文字居中对齐 */
+  vertical-align:middle;
 }
 
-/* —— 勾/叉样式（替代原来的 .dot） —— */
 .check{
   display:inline-block;
-  width:1.1em;             /* 固定宽度，避免抖动 */
+  width:1.1em;          
   text-align:center;
   margin-right:6px;
   font-weight:700;
@@ -39,25 +38,23 @@
   line-height:1;
 }
 .check { display:inline-block; width:1.1em; text-align:center; margin-right:6px; font-weight:700; font-size:15px; line-height:1; }
-.check-true  { color:#10b981; }   /* ✔ 绿色 */
-.check-false { color:#ef4444; }   /* ✘ 红色 */
-.check-none  { color:#cbd5e1; }   /* 灰色占位 */
+.check-true  { color:#10b981; }   
+.check-false { color:#ef4444; }   
+.check-none  { color:#cbd5e1; }  
 
-/* 可选：控制第一列宽度更稳定些 */
  .rt-table th:first-child, .rt-table td:first-child { width: 40%; }
 
-.rt-label{ /* 仅做一点点间距微调 */
+.rt-label{ 
   display:inline-block;
 }
 
-/*增加的部分：点击更改 */
 .check-clickable {
   cursor: pointer;
   user-select: none;
 }
 
 .check-overridden {
-  outline: 2px dashed #f59e0b; /* 橙色虚线框做强调 */
+  outline: 2px dashed #f59e0b;
   outline-offset: 2px;
   border-radius: 4px;
   padding: 0 2px;
