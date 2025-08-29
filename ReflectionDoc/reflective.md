@@ -89,5 +89,35 @@
  - Develop a new frontend page: **Company Details Page**   
 
  3. Hurdles
- - Waiting for database teammates to provide data for integration  
+ - Waiting for database teammates to provide data for integration
+
+
+## @Weimiao Sun
+### 22.08.2025:
+ 1. What I did this week
+ - Based on the data requirements, I conducted a study on the design of relational databases .
+ - Then created a basic database for feasibility verification.
+   
+ 2. Plan for next week
+ - Next week, based on specific data requirements, I will further refine the current project's basic database base on what I designed last week.
+ 
+ 3. Hurdles
+ - There were some minor issues in the implementation of the database technology, but they can be resolved within the limited time frame at present.
+
+### 29.08.2025:
+ 1. What I did this week
+ - Reconfigured the local project deployment environment by setting up a virtual machine to run Bash scripts and configuring the required dependencies.
+ - Improved the database creation logic and optimized the project startup script.
+ - Refined the database design, balancing performance and functionality requirements.
+ - Discussed and finalized the Sprint 2 goals with the team.
+  
+ 2. Plan for next week
+ - Deploy the improved database in practice.  
+ - Apply adjustments on the database service side to support more complex data access requirements.
+ - Further refine the project startup script by integrating environment parameters into an .env file for better simplicity and maintainability.
+
+ 3. Hurdles
+ - Need to explore strategies for balancing performance and functionality in complex database design.
+ - Further learning is required to improve database deployment scripts and SQL statements.
+ - Clarifying and implementing the database optimization direction remains a key task.
 
