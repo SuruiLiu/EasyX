@@ -1,48 +1,21 @@
 # Docker Compose for Raspberry Pi deployment
 
 services:
-  # for database
-  postgres:
-    image: postgres:16-alpine
-    environment:
-      - POSTGRES_DB=easyxdb
-      - POSTGRES_USER=easyx
-      - POSTGRES_PASSWORD=easyxpass
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U easyx -d easyxdb" ]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-
   easyx-app:
-    image: easyx:latest
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "5001:5001"
     environment:
-#      - FLASK_APP=app:create_app    # without this, create_app() won't work
       - FLASK_ENV=production
       - FLASK_DEBUG=0
-      - DATABASE_URL=postgresql+psycopg2://easyx:easyxpass@postgres:5432/easyxdb # for database
-#    command: flask run --host=0.0.0.0 --port=5001   # without this, create_app() won't work
     volumes:
       # Mount for persistent data if needed
       - ./data:/app/data
       # Mount for PDF processing
       - ./uploads:/app/uploads
     restart: unless-stopped
-
-    # wait for database to be ready
-    depends_on:
-      postgres:
-        condition: service_healthy
-
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5001/health"]
       interval: 30s
@@ -72,6 +45,3 @@ services:
     restart: unless-stopped
     profiles:
       - production
-
-volumes:
-  pgdata:
