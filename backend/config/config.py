@@ -12,13 +12,13 @@ class Config:
     DEBUG = os.environ.get('FLASK_DEBUG') or True
     
     # Database configuration
-    DATABASE_URL = os.environ.get('DATABASE_URL') or 'sqlite:///easyx.db'
 
-    # # new database
-    # DATABASE_URL = os.getenv(
-    #     "DATABASE_URL",
-    #     "postgresql+psycopg2://easyx:easyxpass@postgres:5432/easyxdb"
-    # )
-
+    # DATABASE_URL = os.environ.get('DATABASE_URL') or 'sqlite:///easyx.db'
+    # new database
+    DATABASE_URL = os.getenv(
+        "DATABASE_URL",
+        "postgresql+psycopg2://easyx:easyxpass@postgres:5432/easyxdb"
+    )
+    
     # API configuration
     API_VERSION = 'v1'
