@@ -1,4 +1,4 @@
-# Spint1
+# Sprint1
 
 ## @Surui Liu
 
