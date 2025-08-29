@@ -1,5 +1,9 @@
 import os
 
+# Timesheet validation configuration
+MAX_DAILY_HOURS_DEFAULT = 12.0
+HOUR_TOLERANCE = 0.01
+
 class Config:
     """Application configuration"""
     

@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from config.config import Config
 from controllers.home_controller import home_bp
+from controllers.timesheet_controller import bp_timesheet
 from controllers.pdf_extraction_controller import pdf_extraction_bp
 
 def create_app():
@@ -14,6 +15,7 @@ def create_app():
     
     # Register blueprints
     app.register_blueprint(home_bp)
+    app.register_blueprint(bp_timesheet)
     app.register_blueprint(pdf_extraction_bp)
     
     return app

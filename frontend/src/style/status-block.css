@@ -1,0 +1,52 @@
+:root{
+  --border:#e5e7eb; --muted:#64748b; --text:#0f172a; --bg:#fff;
+}
+
+.status-card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--bg);
+  overflow:hidden;
+  max-width: 1040px;
+  margin:16px auto;
+}
+
+.card-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+}
+.card-title{ font-weight:700; font-size:20px; }
+.muted{ color:var(--muted); font-weight:400; margin-left:8px; }
+.card-status{ display:flex; align-items:center; }
+
+.pill{
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:4px 10px;
+  font-size:12px;
+  background:#f8fafc;
+  color:#334155;
+}
+
+.collapse{ border-top:1px solid var(--border); }
+.collapse-head{
+  width:100%; border:0; background:#fff; cursor:pointer;
+  padding:12px 16px; display:flex; align-items:center; justify-content:space-between;
+}
+.collapse-title{ font-weight:700; font-size:18px; }
+.collapse-body{ padding:0 16px 12px 16px; }
+.chev{ color:#424242; transition:transform .2s ease; }
+.chev-open{ transform: rotate(180deg); }
+
+.checklist{
+  list-style:none; padding:0; margin:8px 0 0 0;
+  display:flex; flex-wrap:wrap; gap:10px 16px; font-size:14px;
+}
+.check-item{ display:flex; align-items:center; gap:6px; }
+.bullet{
+  display:inline-flex; width:18px; height:18px; border-radius:999px;
+  align-items:center; justify-content:center; font-size:12px;
+  border:1px solid #a7f3d0; background:#ecfdf5; color:#065f46;
+}
+.bullet-red{ border-color:#fecaca; background:#fef2f2; color:#7f1d1d; }
