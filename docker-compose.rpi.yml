@@ -2,23 +2,6 @@
 version: '3.8'
 
 services:
-  # for database
-  postgres:
-    image: postgres:16-alpine
-    environment:
-      - POSTGRES_DB=easyxdb
-      - POSTGRES_USER=easyx
-      - POSTGRES_PASSWORD=easyxpass
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U easyx -d easyxdb" ]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-
   easyx-app:
     build:
       context: .
@@ -28,8 +11,6 @@ services:
     environment:
       - FLASK_ENV=production
       - FLASK_DEBUG=0
-      # for database
-      - DATABASE_URL=postgresql+psycopg2://easyx:easyxpass@postgres:5432/easyxdb
     volumes:
       # Mount for persistent data if needed
       - ./data:/app/data
@@ -65,6 +46,3 @@ services:
     restart: unless-stopped
     profiles:
       - production
-
-volumes:
-  pgdata:
