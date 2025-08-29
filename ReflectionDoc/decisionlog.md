@@ -13,8 +13,8 @@
 **Reason**: Meet client's complete workflow requirements, from data extraction to final accounting system integration
 
 ### 2. Technical Approach Decisions
-**Decision**: Choose Java for backend development
-**Reason**: Team has experience with Java, suitable for enterprise application development
+**Decision**: Choose Python for backend development
+**Reason**: Team has experience with Python, suitable for enterprise application development
 
 **Decision**: Choose Python for PDF extraction and email processing
 **Reason**: Python has rich library support for PDF processing and AI/ML
