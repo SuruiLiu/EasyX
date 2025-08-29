@@ -4,6 +4,7 @@ from config.config import Config
 from controllers.home_controller import home_bp
 from controllers.timesheet_controller import bp_timesheet
 from controllers.pdf_extraction_controller import pdf_extraction_bp
+from controllers.timesheet_query_controller import bp_timesheet_query 
 
 def create_app():
     """Create Flask application"""
@@ -17,6 +18,7 @@ def create_app():
     app.register_blueprint(home_bp)
     app.register_blueprint(bp_timesheet)
     app.register_blueprint(pdf_extraction_bp)
+    app.register_blueprint(bp_timesheet_query)    # GET /timesheet/<tid>
     
     return app
 
