@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 
 const Extract = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [extractedData, setExtractedData] = useState(null);
-  const [pdfText, setPdfText] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [pdfUrl, setPdfUrl] = useState('');
+  // State management for file upload and processing
+  const [selectedFile, setSelectedFile] = useState(null);        // Selected PDF file
+  const [extractedData, setExtractedData] = useState(null);      // Extracted structured data
+  const [pdfText, setPdfText] = useState('');                    // Raw PDF text content
+  const [loading, setLoading] = useState(false);                 // Loading state for processing
+  const [error, setError] = useState('');                        // Error message display
+  const [pdfUrl, setPdfUrl] = useState('');                      // URL for PDF preview
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file && file.type === 'application/pdf') {
+      // Valid PDF file selected
       setSelectedFile(file);
       setExtractedData(null);
       setPdfText('');
       setError('');
-      
       // Create URL for PDF preview
       const fileUrl = URL.createObjectURL(file);
       setPdfUrl(fileUrl);
     } else {
+      // Invalid file type selected
       setError('Please select a valid PDF file');
       setSelectedFile(null);
       setPdfUrl('');
@@ -36,7 +38,8 @@ const Extract = () => {
     formData.append('pdf_file', selectedFile);
 
     try {
-      const response = await fetch('http://localhost:5001/api/extract-meta', {
+      // Use the extract-meta-save endpoint to perform extraction and saving in one step
+      const response = await fetch('http://localhost:5001/api/extract-meta-save', {
         method: 'POST',
         body: formData,
       });
@@ -46,31 +49,28 @@ const Extract = () => {
       }
 
       const result = await response.json();
-      
       if (result.success) {
+        // Set extracted data and PDF text for display
         setExtractedData(result.meta_data);
-        const textResponse = await fetch('http://localhost:5001/api/extract-pdf', {
-          method: 'POST',
-          body: formData,
-        });
-        if (textResponse.ok) {
-          const textResult = await textResponse.json();
-          if (textResult.success) {
-            setPdfText(textResult.pdf_text);
-          }
-        }
+        setPdfText(result.pdf_text);
+
+        // Show success message after extraction and saving
+        alert(`✅ Data extracted and saved successfully!\nFile: ${result.filename}\nDatabase ID: ${result.tid}\nStatus: ${result.status}`);
       } else {
-        setError(result.error || 'Extraction failed');
+        setError(result.error || 'Extraction and save failed');
       }
     } catch (error) {
       console.error('Error:', error);
-      setError('Failed to extract data from PDF');
+      setError('Failed to extract and save data from PDF');
     } finally {
       setLoading(false);
     }
   };
 
+
+
   const renderExtractedTable = (tableData) => {
+    // Handle empty or invalid table data
     if (!tableData || !Array.isArray(tableData) || tableData.length === 0) {
       return <p>No table data found</p>;
     }
@@ -103,7 +103,7 @@ const Extract = () => {
       );
     }
 
-    // Check if tableData is a 2D array (alternative format)
+    // Check if tableData is a 2D array (alternative format for legacy data)
     if (Array.isArray(tableData[0])) {
       return (
         <div style={{ overflowX: 'auto' }}>
@@ -132,6 +132,7 @@ const Extract = () => {
     return <p>Invalid table data format</p>;
   };
 
+  // CSS styles for table components
   const tableHeaderStyle = {
     backgroundColor: '#007bff',
     color: 'white',
@@ -146,8 +147,9 @@ const Extract = () => {
     textAlign: 'left'
   };
 
+  // CSS styles for file input components
   const fileInputStyle = {
-    display: 'none'
+    display: 'none'  // Hide the default file input
   };
 
   const customFileInputStyle = {
@@ -164,6 +166,7 @@ const Extract = () => {
     marginBottom: '15px'
   };
 
+  // CSS styles for action buttons
   const extractButtonStyle = {
     padding: '12px 24px',
     backgroundColor: '#28a745',
@@ -190,7 +193,6 @@ const Extract = () => {
         {/* Left Panel: PDF Upload and Preview */}
         <div style={{ flex: 1, border: '1px solid #ccc', padding: '15px', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
           <h3>Upload PDF</h3>
-          
           {/* Custom File Input */}
           <label htmlFor="file-upload" style={customFileInputStyle}>
             {selectedFile ? selectedFile.name : 'Choose PDF File'}
@@ -202,10 +204,9 @@ const Extract = () => {
             onChange={handleFileChange}
             style={fileInputStyle}
           />
-          
-          <button 
-            onClick={handleExtract} 
-            disabled={!selectedFile || loading} 
+          <button
+            onClick={handleExtract}
+            disabled={!selectedFile || loading}
             style={!selectedFile || loading ? extractButtonDisabledStyle : extractButtonStyle}
             onMouseOver={(e) => {
               if (!(!selectedFile || loading)) {
@@ -218,9 +219,10 @@ const Extract = () => {
               }
             }}
           >
-            {loading ? 'Extracting...' : 'Extract Data'}
+            {loading ? 'Processing...' : 'Extract & Save Data'}
           </button>
-          
+
+
           {error && (
             <p style={{ color: 'red', marginTop: '10px' }}>Error: {error}</p>
           )}
@@ -229,11 +231,11 @@ const Extract = () => {
           {selectedFile && (
             <div style={{ marginTop: '20px', borderTop: '1px solid #eee', paddingTop: '15px' }}>
               <h4>PDF Preview:</h4>
-              <div style={{ 
-                height: '500px', 
-                backgroundColor: 'white', 
-                padding: '10px', 
-                borderRadius: '5px', 
+              <div style={{
+                height: '500px',
+                backgroundColor: 'white',
+                padding: '10px',
+                borderRadius: '5px',
                 border: '1px solid #ddd',
                 textAlign: 'center',
                 display: 'flex',
@@ -244,9 +246,9 @@ const Extract = () => {
                   <iframe
                     src={pdfUrl}
                     title="PDF Preview"
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
+                    style={{
+                      width: '100%',
+                      height: '100%',
                       border: 'none',
                       minHeight: '480px'
                     }}
